@@ -27,14 +27,16 @@ package net.digital_alexandria.sgl4j.datastructures;
  * <p>
  * Triple is a subclass of Pair, so can be compared.
  *
+ * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
+ *
  * @param <T> some generic extending Comparable
  * @param <U> some generic extending Comparable
  * @param <V> some generic
- * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
 public final class Triple<T extends Comparable<T>, U extends
     Comparable<U>, V> extends Pair<T, U>
 {
+    // third value of triple
     private final V _V;
 
     /**
@@ -57,7 +59,7 @@ public final class Triple<T extends Comparable<T>, U extends
      *
      * @return returns the third value
      */
-    public final V getThird()
+    public V getThird()
     {
         return _V;
     }

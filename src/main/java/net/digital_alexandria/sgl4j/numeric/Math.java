@@ -28,6 +28,7 @@ package net.digital_alexandria.sgl4j.numeric;
  */
 public final class Math
 {
+    /** private constructor to avoid instantiation **/
     private Math(){}
 
     /**
@@ -59,6 +60,6 @@ public final class Math
     public static boolean equals(final double val, final double equals,
                                  final double  delta)
     {
-        return (equals - delta <= val && val <= equals + delta);
+        return equals - delta <= val && val <= equals + delta;
     }
 }

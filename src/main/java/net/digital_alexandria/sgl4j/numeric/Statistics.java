@@ -31,6 +31,7 @@ import org.ejml.simple.SimpleSVD;
  */
 public final class Statistics
 {
+    /** private constructor to avoid instantiation **/
     private Statistics() { }
 
     /**

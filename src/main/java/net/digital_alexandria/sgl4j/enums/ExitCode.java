@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
  * GNU General Public License for more details.
  * <p>
  * You should have received a copy of the GNU General Public License
- * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
+ * along with sgl4j. If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.digital_alexandria.sgl4j.enums;
@@ -28,12 +28,12 @@ package net.digital_alexandria.sgl4j.enums;
  */
 public enum ExitCode
 {
-    // everything is bad
+    /** EXIT_ERROR is returned when something went wrong */
     EXIT_ERROR(-1),
-    // all is well
+    /** EXIT_SUCCESS is returned when all went well */
     EXIT_SUCCESS(0);
 
-    // exit code
+    /** The exit code */
     private final int _CODE;
 
     ExitCode(final int code) { this._CODE = code; }

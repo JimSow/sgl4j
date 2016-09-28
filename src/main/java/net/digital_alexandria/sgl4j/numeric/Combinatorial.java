@@ -32,6 +32,7 @@ import java.util.List;
  */
 public final class Combinatorial
 {
+    /** private constructor to avoid instantiation **/
     private Combinatorial() {}
 
     /**
@@ -40,20 +41,21 @@ public final class Combinatorial
      * E.g: for array [a,b] and length 2 create a List of strings : [aa, ab,
      * ba, bb].
      *
-     * @param array  the chars that should be combinatorically created.
+     * @param array the chars that should be combinatorically created.
      * @param length the length of every string that is returned
+     *
      * @return returns a list of strings
      */
     public static List<String> combinatorial(final char[] array,
                                              final int length)
     {
-        List<java.lang.String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         combinatorial(new StringBuilder(), list, array, length);
         return list;
     }
 
     private static void combinatorial(final StringBuilder builder,
-                                      final List<java.lang.String> list,
+                                      final List<String> list,
                                       final char[] array, final int length)
     {
         if (builder.length() != 0 && builder.length() < length)
@@ -62,9 +64,11 @@ public final class Combinatorial
             list.add(builder.toString());
         else
         {
-            for (char c : array)
-                combinatorial(new StringBuilder(builder).append(c),
+            for (char ac : array)
+            {
+                combinatorial(new StringBuilder(builder).append(ac),
                               list, array, length);
+            }
         }
     }
 }

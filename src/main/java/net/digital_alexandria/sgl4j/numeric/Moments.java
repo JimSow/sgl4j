@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -22,11 +22,14 @@
 package net.digital_alexandria.sgl4j.numeric;
 
 /**
+ * Class that calculates moments of a distribution
+ *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Moments
+public final class Moments
 {
-    private Moments(){}
+    /** private constructor to avoid instantiation **/
+    private Moments() {}
 
     /**
      * Calculate the mean of an array.
@@ -34,10 +37,10 @@ public class Moments
      * @param vals the array for which the mean is calculated
      * @return returns the mean
      */
-    public static double mean(final double [] vals)
+    public static double mean(final double[] vals)
     {
         double mean = 0.0;
-        for (double d: vals) mean += d;
+        for (double d : vals) mean += d;
         return mean / vals.length;
     }
 
@@ -47,16 +50,16 @@ public class Moments
      * @param vals the array for which the variance is calculated
      * @return returns the variance
      */
-    public static double variance(final double [] vals)
+    public static double variance(final double[] vals)
     {
         final double mean = mean(vals);
         double var = 0.0;
-        for (double d: vals)
+        for (double d : vals)
         {
-            final double dif = (d - mean);
+            final double dif = d - mean;
             var += dif * dif;
         }
-        return var / (vals.length  - 1);
+        return var / (vals.length - 1);
     }
 
     /**
@@ -65,7 +68,7 @@ public class Moments
      * @param vals the array for which the standard deviation is calculated
      * @return returns the standard deviation
      */
-    public static double standardDeviation(final double [] vals)
+    public static double standardDeviation(final double[] vals)
     {
         return java.lang.Math.sqrt(variance(vals));
     }

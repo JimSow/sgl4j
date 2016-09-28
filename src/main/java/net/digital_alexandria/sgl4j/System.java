@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -30,10 +30,12 @@ import net.digital_alexandria.sgl4j.enums.ExitCode;
  */
 public final class System
 {
-    private System(){}
+    /** private constructor to avoid instantiation **/
+    private System() {}
 
     /**
-     * Print a message to the error stream and exit the program with a specific error code.
+     * Print a message to the error stream and exit the program with a
+     * specific error code.
      *
      * @param message the message to be printed
      * @param exitCode the error code that is returned

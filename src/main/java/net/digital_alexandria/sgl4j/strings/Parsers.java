@@ -28,7 +28,7 @@ package net.digital_alexandria.sgl4j.strings;
  */
 public final class Parsers
 {
-
+    /** private constructor to avoid instantiation **/
     private Parsers() {}
 
     /**

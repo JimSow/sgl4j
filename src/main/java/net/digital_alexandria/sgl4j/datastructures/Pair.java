@@ -27,14 +27,17 @@ package net.digital_alexandria.sgl4j.datastructures;
  * Pair implements Comparable. If two Pairs are compared, then the FIRST
  * values are compared.
  *
+ * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
+ *
  * @param <T> some generic extending Comparable
  * @param <U> some generic extending Comparable
- * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
 public class Pair<T extends Comparable<T>, U extends Comparable<U>>
     implements Comparable<Pair<T, U>>
 {
+    // first value of pair
     private final T _T;
+    // second value of pair
     private final U _U;
 
     /**
