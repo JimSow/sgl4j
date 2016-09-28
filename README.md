@@ -16,11 +16,18 @@ TODO
 
 ### Install the package using Maven
 
-If you use Maven just put this into your pom.xml:
+If you use Maven just put the repository into your ```pom.xml```:
 
-TODO repository dependency
+```xml```
+<repositories>
+    <repository>
+        <id>central</id>
+        <url>http://digital-alexandria.net:8081/artifactory/libs-release</url>
+    </repository>
+</repositories>
+```
 
-
+Then add the dependency:
 ```xml
 <dependency>
     <groupId>net.digital-alexandria</groupId>
