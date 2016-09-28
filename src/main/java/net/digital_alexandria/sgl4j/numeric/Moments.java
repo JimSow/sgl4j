@@ -19,7 +19,7 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.math;
+package net.digital_alexandria.sgl4j.numeric;
 
 /**
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
@@ -67,6 +67,6 @@ public class Moments
      */
     public static double standardDeviation(final double [] vals)
     {
-        return Math.sqrt(variance(vals));
+        return java.lang.Math.sqrt(variance(vals));
     }
 }

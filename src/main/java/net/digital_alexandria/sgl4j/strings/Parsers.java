@@ -19,20 +19,26 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.util;
-
-import net.digital_alexandria.lvm4j.enums.ExitCode;
+package net.digital_alexandria.sgl4j.strings;
 
 /**
  * @author Simon Dirmeier {@literal s@simon-dirmeier.net}
  */
-public final class System
+public final class Parsers
 {
-    private System(){}
 
-    public static void exit(java.lang.String s, ExitCode exitCode)
+    private Parsers(){}
+    /**
+     * Convert an array of strings to an array of doubles.
+     *
+     * @param strings an array of strings
+     * @return an array of doubles
+     */
+    public static double[] toDouble(java.lang.String... strings)
     {
-        java.lang.System.err.println(s);
-        java.lang.System.exit(exitCode.code());
+        double doubles[] = new double[strings.length];
+        for (int i = 0; i < doubles.length; i++)
+            doubles[i] = Double.parseDouble(strings[i]);
+        return doubles;
     }
 }

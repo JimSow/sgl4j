@@ -19,28 +19,30 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package java.net.digital_alexandria.tests;
+package net.digital_alexandria.tests;
 
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
+import net.digital_alexandria.sgl4j.enums.ExitCode;
+import org.junit.Test;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-@RunWith(Suite.class)
-@Suite.SuiteClasses({
-    SortTest.class, EnumTest.class, UtilTest.class
-})
-public class TestSuite
+public class EnumTest
 {
 
-    @BeforeClass
-    public static void setup()
+    @Test
+    public void testExitCodeError() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException
     {
-        org.apache.log4j.ConsoleAppender appender = new org.apache.log4j.ConsoleAppender();
-        appender.setWriter(new java.io.OutputStreamWriter(java.lang.System.out));
-        appender.setLayout(new org.apache.log4j.PatternLayout("%-5p [%t]: %m%n"));
-        org.apache.log4j.Logger.getRootLogger().addAppender(appender);
+        ExitCode e = ExitCode.EXIT_ERROR;
+        assert e.code() == -1;
+    }
+
+    @Test
+    public void testExitCodeSuccess() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException
+    {
+        ExitCode e = ExitCode.EXIT_SUCCESS;
+        assert e.code() == 0;
     }
 }

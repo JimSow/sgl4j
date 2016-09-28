@@ -19,27 +19,29 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.enums;
+package net.digital_alexandria.tests;
+
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 /**
- * Enum to store exit codes
- *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public enum ExitCode
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+    SortTest.class, EnumTest.class, StringsTest.class,
+    DataStructureTest.class, NumericTest.class
+})
+public class TestSuite
 {
-    // everything is bad
-    EXIT_ERROR(-1),
-    // all is well
-    EXIT_SUCCESS(0);
 
-    // exit code
-    private final int _CODE;
-
-    ExitCode(int code) { this._CODE = code; }
-
-    public int code()
+    @BeforeClass
+    public static void setup()
     {
-        return _CODE;
+        org.apache.log4j.ConsoleAppender appender = new org.apache.log4j.ConsoleAppender();
+        appender.setWriter(new java.io.OutputStreamWriter(java.lang.System.out));
+        appender.setLayout(new org.apache.log4j.PatternLayout("%-5p [%t]: %m%n"));
+        org.apache.log4j.Logger.getRootLogger().addAppender(appender);
     }
 }

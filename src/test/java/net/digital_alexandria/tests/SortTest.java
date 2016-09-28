@@ -19,10 +19,10 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package java.net.digital_alexandria.tests;
+package net.digital_alexandria.tests;
 
-import net.digital_alexandria.lvm4j.algorithm.sort.Sort;
-import net.digital_alexandria.lvm4j.structs.Pair;
+import net.digital_alexandria.sgl4j.algorithm.Sort;
+import net.digital_alexandria.sgl4j.datastructures.Pair;
 import org.junit.Before;
 import org.junit.Test;
 

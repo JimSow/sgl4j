@@ -19,7 +19,7 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.util;
+package net.digital_alexandria.sgl4j.numeric;
 
 /**
  * @author Simon Dirmeier {@literal s@simon-dirmeier.net}

@@ -19,30 +19,27 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package java.net.digital_alexandria.tests;
-
-import net.digital_alexandria.lvm4j.enums.ExitCode;
-import org.junit.Test;
-
-import java.lang.reflect.InvocationTargetException;
+package net.digital_alexandria.sgl4j.enums;
 
 /**
+ * Enum to store exit codes
+ *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class EnumTest
+public enum ExitCode
 {
+    // everything is bad
+    EXIT_ERROR(-1),
+    // all is well
+    EXIT_SUCCESS(0);
 
-    @Test
-    public void testExitCodeError() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException
-    {
-        ExitCode e = ExitCode.EXIT_ERROR;
-        assert e.code() == -1;
-    }
+    // exit code
+    private final int _CODE;
 
-    @Test
-    public void testExitCodeSuccess() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException
+    ExitCode(int code) { this._CODE = code; }
+
+    public int code()
     {
-        ExitCode e = ExitCode.EXIT_SUCCESS;
-        assert e.code() == 0;
+        return _CODE;
     }
 }

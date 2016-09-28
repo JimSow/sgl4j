@@ -19,47 +19,30 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.datastructures;
+package net.digital_alexandria.sgl4j.datastructures;
 
 /**
- * Class that holds a pair of two values.
+ * Class that holds a triple of values.
  *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Pair<T extends Comparable<T>, U extends Comparable<U>> implements Comparable<Pair<T, U>>
+public class Triple<T extends Comparable<T>, U extends Comparable<U>, V> extends Pair<T, U>
 {
-    private final T _T;
-    private final U _U;
+    private final V _V;
 
-    public Pair(T t, U u)
+    public Triple(T t, U u, V v)
     {
-        this._T = t;
-        this._U = u;
+        super(t, u);
+        this._V = v;
     }
 
     /**
-     * Getter for the first value.
+     * Getter for the third value.
      *
-     * @return returns the first value
+     * @return returns the third value
      */
-    public T getFirst()
+    public V getThird()
     {
-        return _T;
-    }
-
-    /**
-     * Getter for the second value.
-     *
-     * @return returns the second value
-     */
-    public U getSecond()
-    {
-        return _U;
-    }
-
-    @Override
-    public int compareTo(Pair<T, U> o)
-    {
-        return this._T.compareTo(o._T);
+        return _V;
     }
 }

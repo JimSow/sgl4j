@@ -19,30 +19,33 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.datastructures;
+package net.digital_alexandria.sgl4j.algorithm;
+
+import net.digital_alexandria.sgl4j.datastructures.Pair;
+
+import java.util.Arrays;
 
 /**
- * Class that holds a triple of values.
- *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Triple<T extends Comparable<T>, U extends Comparable<U>, V> extends Pair<T, U>
+public final class Sort
 {
-    private final V _V;
-
-    public Triple(T t, U u, V v)
-    {
-        super(t, u);
-        this._V = v;
-    }
+    private Sort() {}
 
     /**
-     * Getter for the third value.
+     * Sort a array of pairs by their second attributes.
      *
-     * @return returns the third value
+     * @param pairs a array of pairs
+     * @param descending sorts in descending order if true
+     * @param <T> some generic extending Comparable
+     * @param <U> some generic extending Comparable
      */
-    public V getThird()
+    public static <T extends Comparable<T>, U extends Comparable<U>> void sortSecond(Pair<T, U>[] pairs,
+                                                                                     boolean descending)
     {
-        return _V;
+        if (descending)
+            Arrays.sort(pairs, (o1, o2) -> (-1) * o1.getSecond().compareTo(o2.getSecond()));
+        else
+            Arrays.sort(pairs, (o1, o2) -> o1.getSecond().compareTo(o2.getSecond()));
     }
 }

@@ -19,44 +19,47 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.math.linalg;
-
-import org.ejml.simple.SimpleMatrix;
-import org.ejml.simple.SimpleSVD;
+package net.digital_alexandria.sgl4j.datastructures;
 
 /**
+ * Class that holds a pair of two values.
+ *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Statistics
+public class Pair<T extends Comparable<T>, U extends Comparable<U>> implements Comparable<Pair<T, U>>
 {
-    private Statistics() {
+    private final T _T;
+    private final U _U;
+
+    public Pair(T t, U u)
+    {
+        this._T = t;
+        this._U = u;
     }
 
     /**
-     * Compute the variance-covariance matrix.
+     * Getter for the first value.
      *
-     * @param X the matrix for which the vcov is calculated
-     * @return returns the vcov
+     * @return returns the first value
      */
-    public static SimpleMatrix vcov(SimpleMatrix X)
+    public T getFirst()
     {
-        final int n = X.numRows();
-        SimpleMatrix U = new SimpleMatrix(n, n);
-        U.set(1.0);
-        SimpleMatrix sec = U.mult(X).divide((double) n);
-        SimpleMatrix x = X.minus(sec);
-        return x.transpose().mult(X).divide((double) n);
+        return _T;
     }
 
     /**
-     * Compute a singular value decomposition.
+     * Getter for the second value.
      *
-     * @param X the matrix for which the svd is calculated
-     * @return returns the svd
+     * @return returns the second value
      */
-    public static SimpleSVD svd(SimpleMatrix X)
+    public U getSecond()
     {
-        return X.svd();
+        return _U;
     }
 
+    @Override
+    public int compareTo(Pair<T, U> o)
+    {
+        return this._T.compareTo(o._T);
+    }
 }

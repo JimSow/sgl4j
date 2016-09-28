@@ -19,33 +19,44 @@
  * along with sgl4j.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package sgl4j.algorithm.sort;
+package net.digital_alexandria.sgl4j.numeric;
 
-import net.digital_alexandria.lvm4j.structs.Pair;
-
-import java.util.Arrays;
+import org.ejml.simple.SimpleMatrix;
+import org.ejml.simple.SimpleSVD;
 
 /**
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public final class Sort
+public class Statistics
 {
-    private Sort() {}
+    private Statistics() {
+    }
 
     /**
-     * Sort a array of pairs by their second attributes.
+     * Compute the variance-covariance matrix.
      *
-     * @param pairs a array of pairs
-     * @param descending sorts in descending order if true
-     * @param <T> some generic extending Comparable
-     * @param <U> some generic extending Comparable
+     * @param X the matrix for which the vcov is calculated
+     * @return returns the vcov
      */
-    public static <T extends Comparable<T>, U extends Comparable<U>> void sortSecond(Pair<T, U>[] pairs,
-                                                                                     boolean descending)
+    public static SimpleMatrix vcov(SimpleMatrix X)
     {
-        if (descending)
-            Arrays.sort(pairs, (o1, o2) -> (-1) * o1.getSecond().compareTo(o2.getSecond()));
-        else
-            Arrays.sort(pairs, (o1, o2) -> o1.getSecond().compareTo(o2.getSecond()));
+        final int n = X.numRows();
+        SimpleMatrix U = new SimpleMatrix(n, n);
+        U.set(1.0);
+        SimpleMatrix sec = U.mult(X).divide((double) n);
+        SimpleMatrix x = X.minus(sec);
+        return x.transpose().mult(X).divide((double) n);
     }
+
+    /**
+     * Compute a singular value decomposition.
+     *
+     * @param X the matrix for which the svd is calculated
+     * @return returns the svd
+     */
+    public static SimpleSVD svd(SimpleMatrix X)
+    {
+        return X.svd();
+    }
+
 }
