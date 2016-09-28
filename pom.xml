@@ -4,9 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>sgl4j</groupId>
-    <artifactId>net.digital-alexandria</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <groupId>net.digital-alexandria</groupId>
+    <artifactId>sgl4j</artifactId>
+    <version>0.1</version>
+    <packaging>jar</packaging>
 
     <name>sgl4j</name>
     <description>Standard generics library for Java</description>
@@ -38,6 +39,11 @@
             <name>h2460727.stratoserver.net-releases</name>
             <url>http://digital-alexandria.net:8081/artifactory/libs-release-local</url>
         </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>h2460727.stratoserver.net-releases</name>
+            <url>http://digital-alexandria.net:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <properties>
