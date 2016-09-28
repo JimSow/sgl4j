@@ -8,7 +8,7 @@ Standard generics library in Java.
 
 ## Introduction
 
-Most of the tools that I develop need the same utility functions, data-structures etc, sorting algorithms, Enums and so on. In ```C++``` the Standard Template Library (```STL```) offers a lot of these algorithms and data-structures. The *Standard Generics Library for Java* (```sgl4j```) wants to do the very same thing. So far the library is very basic and only used for [```lvm4j```](https://github.com/dirmeier/lvm4j).
+Most of the tools that I develop need the same utility functions, data-structuresc, algorithms, Enums and so on. In ```C++``` the *Standard Template Library* (```STL```) offers a lot of these features. The *Standard Generics Library for Java* (```sgl4j```) wants to do the very same thing. So far the library is very basic and only used for [```lvm4j```](https://github.com/dirmeier/lvm4j) but I will steadily expand it.
 
 ## Installation
  
