@@ -29,8 +29,7 @@ import org.ejml.simple.SimpleSVD;
  */
 public class Statistics
 {
-    private Statistics() {
-    }
+    private Statistics() { }
 
     /**
      * Compute the variance-covariance matrix.

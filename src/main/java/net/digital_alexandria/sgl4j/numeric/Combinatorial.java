@@ -29,6 +29,9 @@ import java.util.List;
  */
 public class Combinatorial
 {
+
+    private Combinatorial(){}
+
     /**
      * Get every combination of strings of lengths for a given array of chars.<br>
      * E.g: for array [a,b] and length 2 create a List of strings : [aa, ab,  ba, bb].

@@ -42,7 +42,7 @@ public class Math
     {
         double sum = 0.0;
         for (double d : vec) sum += d;
-        return (equals - delta <= sum && sum <= equals + delta);
+        return equals(sum, equals,delta);
     }
 
     /**
