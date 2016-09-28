@@ -51,7 +51,7 @@ You can also build the <code>jar</code> and then include it in your package.
 
 ## Usage
 
-Just checkout the [API](https://dirmeier.github.io/sgl4j/).
+Just check out the [javadocs](https://dirmeier.github.io/sgl4j/).
  
 ## Author
 
