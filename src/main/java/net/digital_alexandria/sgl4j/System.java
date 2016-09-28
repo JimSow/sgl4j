@@ -24,15 +24,23 @@ package net.digital_alexandria.sgl4j;
 import net.digital_alexandria.sgl4j.enums.ExitCode;
 
 /**
+ * Class that is used for exiting, printing to stderr, etc.
+ *
  * @author Simon Dirmeier {@literal s@simon-dirmeier.net}
  */
 public final class System
 {
     private System(){}
 
-    public static void exit(java.lang.String s, ExitCode exitCode)
+    /**
+     * Print a message to the error stream and exit the program with a specific error code.
+     *
+     * @param message the message to be printed
+     * @param exitCode the error code that is returned
+     */
+    public static void exit(final String message, final ExitCode exitCode)
     {
-        java.lang.System.err.println(s);
+        java.lang.System.err.println(message);
         java.lang.System.exit(exitCode.code());
     }
 }

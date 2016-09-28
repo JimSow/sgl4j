@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -26,6 +26,8 @@ import net.digital_alexandria.sgl4j.datastructures.Pair;
 import java.util.Arrays;
 
 /**
+ * Class for sorting data-structures.
+ *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
 public final class Sort
@@ -35,17 +37,25 @@ public final class Sort
     /**
      * Sort a array of pairs by their second attributes.
      *
-     * @param pairs a array of pairs
+     * @param pairs      a array of pairs
      * @param descending sorts in descending order if true
-     * @param <T> some generic extending Comparable
-     * @param <U> some generic extending Comparable
+     * @param <T>        some generic extending Comparable
+     * @param <U>        some generic extending Comparable
      */
-    public static <T extends Comparable<T>, U extends Comparable<U>> void sortSecond(Pair<T, U>[] pairs,
-                                                                                     boolean descending)
+    public static <T extends Comparable<T>, U extends Comparable<U>>
+    void sortSecond(final Pair<T, U>[] pairs, final boolean descending)
     {
         if (descending)
-            Arrays.sort(pairs, (o1, o2) -> (-1) * o1.getSecond().compareTo(o2.getSecond()));
+        {
+            Arrays.sort(
+                pairs,
+                (o1, o2) -> (-1) * o1.getSecond().compareTo(o2.getSecond()));
+        }
         else
-            Arrays.sort(pairs, (o1, o2) -> o1.getSecond().compareTo(o2.getSecond()));
+        {
+            Arrays.sort(
+                pairs,
+                (o1, o2) -> o1.getSecond().compareTo(o2.getSecond()));
+        }
     }
 }

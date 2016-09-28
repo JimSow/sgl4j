@@ -25,9 +25,11 @@ import org.ejml.simple.SimpleMatrix;
 import org.ejml.simple.SimpleSVD;
 
 /**
+ * Class for statistical computations.
+ *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Statistics
+public final class Statistics
 {
     private Statistics() { }
 
@@ -37,7 +39,7 @@ public class Statistics
      * @param X the matrix for which the vcov is calculated
      * @return returns the vcov
      */
-    public static SimpleMatrix vcov(SimpleMatrix X)
+    public static SimpleMatrix vcov(final SimpleMatrix X)
     {
         final int n = X.numRows();
         SimpleMatrix U = new SimpleMatrix(n, n);
@@ -53,7 +55,7 @@ public class Statistics
      * @param X the matrix for which the svd is calculated
      * @return returns the svd
      */
-    public static SimpleSVD svd(SimpleMatrix X)
+    public static SimpleSVD svd(final SimpleMatrix X)
     {
         return X.svd();
     }

@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -25,31 +25,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Class Combinatorial can be used to create all combinations of letters, etc.
+ * for a given length.
+ *
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Combinatorial
+public final class Combinatorial
 {
-
-    private Combinatorial(){}
+    private Combinatorial() {}
 
     /**
-     * Get every combination of strings of lengths for a given array of chars.<br>
-     * E.g: for array [a,b] and length 2 create a List of strings : [aa, ab,  ba, bb].
+     * Get every combination of strings of lengths for a given array of chars
+     * .<br>
+     * E.g: for array [a,b] and length 2 create a List of strings : [aa, ab,
+     * ba, bb].
      *
      * @param array  the chars that should be combinatorically created.
      * @param length the length of every string that is returned
      * @return returns a list of strings
      */
-    public static List<String> combinatorial(char[] array, int length)
+    public static List<String> combinatorial(final char[] array,
+                                             final int length)
     {
         List<java.lang.String> list = new ArrayList<>();
         combinatorial(new StringBuilder(), list, array, length);
         return list;
     }
 
-    private static void combinatorial(StringBuilder builder,
-                                      List<java.lang.String> list,
-                                      char[] array, int length)
+    private static void combinatorial(final StringBuilder builder,
+                                      final List<java.lang.String> list,
+                                      final char[] array, final int length)
     {
         if (builder.length() != 0 && builder.length() < length)
             list.add(builder.toString());
@@ -57,8 +62,8 @@ public class Combinatorial
             list.add(builder.toString());
         else
         {
-            for (char anArray : array)
-                combinatorial(new StringBuilder(builder).append(anArray),
+            for (char c : array)
+                combinatorial(new StringBuilder(builder).append(c),
                               list, array, length);
         }
     }

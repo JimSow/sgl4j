@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -22,16 +22,30 @@
 package net.digital_alexandria.sgl4j.datastructures;
 
 /**
- * Class that holds a pair of two values.
+ * Class that holds a pair of two values that both extend Comparable..
+ * <p>
+ * Pair implements Comparable. If two Pairs are compared, then the FIRST
+ * values are compared.
  *
+ * @param <T> some generic extending Comparable
+ * @param <U> some generic extending Comparable
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Pair<T extends Comparable<T>, U extends Comparable<U>> implements Comparable<Pair<T, U>>
+public class Pair<T extends Comparable<T>, U extends Comparable<U>>
+    implements Comparable<Pair<T, U>>
 {
     private final T _T;
     private final U _U;
 
-    public Pair(T t, U u)
+    /**
+     * Initialize a object of class Pair.
+     * <p>
+     * Pair stores two generic Comparables.
+     *
+     * @param t the first value of the pair
+     * @param u the second value of the pair
+     */
+    public Pair(final T t, final U u)
     {
         this._T = t;
         this._U = u;
@@ -42,7 +56,7 @@ public class Pair<T extends Comparable<T>, U extends Comparable<U>> implements C
      *
      * @return returns the first value
      */
-    public T getFirst()
+    public final T getFirst()
     {
         return _T;
     }
@@ -52,13 +66,13 @@ public class Pair<T extends Comparable<T>, U extends Comparable<U>> implements C
      *
      * @return returns the second value
      */
-    public U getSecond()
+    public final U getSecond()
     {
         return _U;
     }
 
     @Override
-    public int compareTo(Pair<T, U> o)
+    public int compareTo(final Pair<T, U> o)
     {
         return this._T.compareTo(o._T);
     }

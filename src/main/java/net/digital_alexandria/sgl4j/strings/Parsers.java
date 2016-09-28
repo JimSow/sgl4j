@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -22,19 +22,22 @@
 package net.digital_alexandria.sgl4j.strings;
 
 /**
+ * Class for parsing strings, numerics or arrays.
+ *
  * @author Simon Dirmeier {@literal s@simon-dirmeier.net}
  */
 public final class Parsers
 {
 
-    private Parsers(){}
+    private Parsers() {}
+
     /**
      * Convert an array of strings to an array of doubles.
      *
      * @param strings an array of strings
      * @return an array of doubles
      */
-    public static double[] toDouble(java.lang.String... strings)
+    public static double[] toDouble(final String ... strings)
     {
         double doubles[] = new double[strings.length];
         for (int i = 0; i < doubles.length; i++)

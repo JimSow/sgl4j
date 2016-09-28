@@ -36,7 +36,7 @@ public enum ExitCode
     // exit code
     private final int _CODE;
 
-    ExitCode(int code) { this._CODE = code; }
+    ExitCode(final int code) { this._CODE = code; }
 
     public int code()
     {

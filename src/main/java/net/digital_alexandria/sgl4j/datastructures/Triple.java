@@ -1,8 +1,8 @@
 /**
  * sgl4j: a Java implementation of various latent variable models.
- *
+ * <p>
  * Copyright (C) 2015 - 2016 Simon Dirmeier
- *
+ * <p>
  * This file is part of sgl4j.
  * <p>
  * sgl4j is free software: you can redistribute it and/or modify
@@ -22,15 +22,31 @@
 package net.digital_alexandria.sgl4j.datastructures;
 
 /**
- * Class that holds a triple of values.
+ * Class that holds a triple of three values. The first ones are comparable
+ * while the third one is not.
+ * <p>
+ * Triple is a subclass of Pair, so can be compared.
  *
+ * @param <T> some generic extending Comparable
+ * @param <U> some generic extending Comparable
+ * @param <V> some generic
  * @author Simon Dirmeier {@literal simon.dirmeier@gmx.de}
  */
-public class Triple<T extends Comparable<T>, U extends Comparable<U>, V> extends Pair<T, U>
+public final class Triple<T extends Comparable<T>, U extends
+    Comparable<U>, V> extends Pair<T, U>
 {
     private final V _V;
 
-    public Triple(T t, U u, V v)
+    /**
+     * Initialize a object of class Triple.
+     * <p>
+     * Triple stores two generic Comparables and one random generic.
+     *
+     * @param t the first value of the triple
+     * @param u the second value of the triple
+     * @param v the third value of the tripl
+     */
+    public Triple(final T t, final U u, final V v)
     {
         super(t, u);
         this._V = v;
@@ -41,7 +57,7 @@ public class Triple<T extends Comparable<T>, U extends Comparable<U>, V> extends
      *
      * @return returns the third value
      */
-    public V getThird()
+    public final V getThird()
     {
         return _V;
     }

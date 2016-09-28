@@ -22,9 +22,11 @@
 package net.digital_alexandria.sgl4j.numeric;
 
 /**
+ * Class for diverse mathematical computations.
+ *
  * @author Simon Dirmeier {@literal s@simon-dirmeier.net}
  */
-public class Math
+public final class Math
 {
     private Math(){}
 
@@ -37,8 +39,8 @@ public class Math
      * @param equals the value the sum of the array is compared to
      * @return returns true of values are equal
      */
-    public static boolean sumEquals(double vec[], double delta,
-                                    double equals)
+    public static boolean sumEquals(final double vec[], final double delta,
+                                    final double equals)
     {
         double sum = 0.0;
         for (double d : vec) sum += d;
@@ -54,7 +56,8 @@ public class Math
      * @param equals the value val is compared to
      * @return returns true of values are equal
      */
-    public static boolean equals(double val, double equals, double delta)
+    public static boolean equals(final double val, final double equals,
+                                 final double  delta)
     {
         return (equals - delta <= val && val <= equals + delta);
     }
