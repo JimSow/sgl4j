@@ -51,8 +51,8 @@ You can also build the <code>jar</code> and then include it in your package.
 
 ## Usage
 
-TODO
-
+Just checkout the [API](https://dirmeier.github.io/sgl4j/).
+ 
 ## Author
 
 * Simon Dirmeier <a href="mailto:simon.dirmeier@gmx.de">simon.dirmeier@gmx.de</a>
