@@ -17,8 +17,7 @@ You can install the library in two different ways. Either you download the packa
 ### Install the package using Maven
 
 If you use Maven just put the repository into your ```pom.xml```:
-
-```xml```
+```xml
 <repositories>
     <repository>
         <id>central</id>
