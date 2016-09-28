@@ -8,11 +8,11 @@ Standard generics library in Java.
 
 ## Introduction
 
-TODO
+Most of the tools that I develop need the same utility functions, data-structures etc, sorting algorithms, Enums and so on. In ```C++``` the Standard Template Library (```STL```) offers a lot of these algorithms and data-structures. The *Standard Generics Library for Java* (```sgl4j```) wants to do the very same thing. So far the library is very basic and only used for [```lvm4j```](https://github.com/dirmeier/lvm4j).
 
 ## Installation
  
- todo
+You can install the library in two different ways. Either you download the package and build it offline or you just add a dependency to you Maven project.
 
 ### Install the package using Maven
 
@@ -50,11 +50,9 @@ You can also build the <code>jar</code> and then include it in your package.
 
 3) This gives you a <code>sgl4j-standalone.jar</code> that can be added to your project (make sure to call this correctly).
 
-
 ## Usage
 
 TODO
-
 
 ## Author
 
