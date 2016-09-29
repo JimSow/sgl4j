@@ -28,16 +28,21 @@ package net.digital_alexandria.sgl4j.enums;
  */
 public enum ExitCode
 {
-    /** EXIT_ERROR is returned when something went wrong */
+    // EXIT_ERROR is returned when something went wrong
     EXIT_ERROR(-1),
-    /** EXIT_SUCCESS is returned when all went well */
+    // EXIT_SUCCESS is returned when all went well
     EXIT_SUCCESS(0);
 
-    /** The exit code */
+    // the exit code
     private final int _CODE;
 
     ExitCode(final int code) { this._CODE = code; }
 
+    /**
+     * Getter for the integer value of the exit code enum.
+     *
+     * @return returns the exit code as integer
+     */
     public int code()
     {
         return _CODE;

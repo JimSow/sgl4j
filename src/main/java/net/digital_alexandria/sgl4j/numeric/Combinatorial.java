@@ -54,6 +54,14 @@ public final class Combinatorial
         return list;
     }
 
+    /**
+     * Appender for the combinatorial expansion of a char array
+     *
+     * @param builder current combination as string builder
+     * @param list list with all the combinations
+     * @param array array of elements that are combined
+     * @param length maximal length of single combination
+     */
     private static void combinatorial(final StringBuilder builder,
                                       final List<String> list,
                                       final char[] array, final int length)

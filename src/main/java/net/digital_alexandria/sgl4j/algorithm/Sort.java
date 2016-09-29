@@ -32,6 +32,7 @@ import java.util.Arrays;
  */
 public final class Sort
 {
+    /** private constructor to avoid instantiation **/
     private Sort() {}
 
     /**
