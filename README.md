@@ -8,9 +8,9 @@ Standard generics library in Java.
 
 ## Introduction
 
-The *Standard Generics Library for Java* (``sgl4j``) is a package for basic utility functions, data-structures, algorithms, Enums etc. that are used routinely for programming. This, for example, includes 
+The *Standard Generics Library for Java* (``sgl4j``) is a package for basic utility functions, data-structures, algorithms, enums etc. that are used routinely for programming. These, for example, include
 
-* data-structures like pairs and Fibonacci heaps,
+* data-structures like suffix arrays and Fibonacci heaps,
 * combinatorial, recursive functions like ``R``'s ``combn``,
 * statistics such as precision matrices for GGMs, 
 * algorithms like binary search.
