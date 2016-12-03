@@ -1,5 +1,6 @@
 <h1 align="center"> sgl4j </h1>
 
+[![Project Status](http://www.repostatus.org/badges/latest/suspended.svg)](http://www.repostatus.org/#suspended)
 [![Build Status](https://travis-ci.org/dirmeier/sgl4j.svg?branch=master)](https://travis-ci.org/dirmeier/sgl4j.svg?branch=master)
 [![codecov](https://codecov.io/gh/dirmeier/sgl4j/branch/master/graph/badge.svg)](https://codecov.io/gh/dirmeier/sgl4j)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/28c9723c26b04237b94895f035dc5b32)](https://www.codacy.com/app/simon-dirmeier/sgl4j?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=dirmeier/sgl4j&amp;utm_campaign=Badge_Grade)
